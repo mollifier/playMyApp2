@@ -5,7 +5,8 @@ import play.api.mvc._
 
 object TemplateController extends Controller {
   def show = Action {
-    Ok(views.html.list("show list"))
+    var userList = List[String]("mollifier", "user2", "user3")
+    Ok(views.html.list("show list", userList))
   }
 }
 

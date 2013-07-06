@@ -1,5 +1,10 @@
-@(message: String)
+@(message: String, userList: List[String])
 
 @main("/show") {
   <h1>@message</h1>
+  <ul>
+    @for(user <- userList) {
+      <li><p>@user</p></li>
+    }
+  </ul>
 }
