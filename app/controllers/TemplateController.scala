@@ -18,8 +18,8 @@ object TemplateController extends Controller {
 
   def showDetail(id: Long) = Action {
     inTransaction {
-      //val user = CoreSchema.users.where(u => u.id === id)
-      Ok(views.html.index("show list detail "))
+      val user = CoreSchema.users.where(u => u.id === id).single
+      Ok(views.html.userDetail("show detail", user))
     }
   }
 }

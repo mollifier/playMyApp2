@@ -1,0 +1,9 @@
+@(message: String, user: models.User)
+
+@main("/show/detail/") {
+  <h1>@message</h1>
+  <p><a href="/">top</a></p>
+  <p>@user.name</p>
+  <p>@user.email</p>
+}
+
