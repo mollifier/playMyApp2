@@ -11,7 +11,8 @@ object ApplicationBuild extends Build {
     // Add your project dependencies here,
     jdbc,
     anorm,
-   "mysql" % "mysql-connector-java" % "5.1.24"
+    "org.squeryl" %% "squeryl" % "0.9.5-6",
+    "mysql" % "mysql-connector-java" % "5.1.24"
   )
 
 
