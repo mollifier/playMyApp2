@@ -8,5 +8,11 @@ object TemplateController extends Controller {
     var userList = List[String]("mollifier", "user2", "user3")
     Ok(views.html.list("show list", userList))
   }
+
+
+  def showDetail = Action {
+    var userList = List[String]("mollifier", "user2", "user3")
+    Ok(views.html.list("show list detail", userList))
+  }
 }
 
