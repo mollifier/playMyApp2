@@ -3,10 +3,10 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
+GET     /                              controllers.Application.index
 
-GET     /show                       controllers.TemplateController.show
-GET     /show/detail/:id            controllers.TemplateController.showDetail(id:Long)
+GET     /show                          controllers.TemplateController.show
+GET     /show/detail/$id<[0-9]+>       controllers.TemplateController.showDetail(id:Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
