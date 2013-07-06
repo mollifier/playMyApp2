@@ -1,10 +1,11 @@
 @(message: String, userList: List[String])
+@import tags.listUser
 
 @main("/show") {
   <h1>@message</h1>
   <ul>
     @for(user <- userList) {
-      <li><p>@user</p></li>
+      @listUser(user)
     }
   </ul>
 }
