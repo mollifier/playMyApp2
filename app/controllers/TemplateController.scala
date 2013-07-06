@@ -11,19 +11,16 @@ import org.squeryl.annotations.Column
 object TemplateController extends Controller {
   def show = Action {
     inTransaction {
-      val userList = CoreSchema.users.map(u => u.name).toList
+      val userList = CoreSchema.users.toList
       Ok(views.html.list("show user list", userList))
     }
   }
 
   def showDetail(id: Long) = Action {
-    var userList = List[String]("mollifier", "user2", "user3")
     inTransaction {
-      val user = CoreSchema.users.where(u => u.id === id).single
-      Ok(views.html.list("show list detail " + user.name, userList))
+      //val user = CoreSchema.users.where(u => u.id === id)
+      Ok(views.html.index("show list detail "))
     }
-
-    //Ok(views.html.list("show list detail " + id, userList))
   }
 }
 
